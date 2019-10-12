@@ -5,7 +5,7 @@ module Pokeberu
     def decorate(text)
       lines = []
       lines << hr
-      lines << "|#{text.center(LENGTH)}|"
+      lines << "|#{text.ljust(LENGTH)}|"
       lines << hr
       lines.join("\n")
     end

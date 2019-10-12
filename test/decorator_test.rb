@@ -6,7 +6,7 @@ class DecoratorTest < Minitest::Test
     input = 'ｱｲｼﾃﾙ'
     expected = <<TEXT.chomp
 ------------------
-|     ｱｲｼﾃﾙ      |
+|ｱｲｼﾃﾙ           |
 ------------------
 TEXT
 
