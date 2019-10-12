@@ -16,12 +16,12 @@ module Pokeberu
         print 'メッセージを入力してください (exitで終了): '
         input = gets.chomp
         if input == 'exit'
+          show_pokberu(BYE)
           break
         else
           show_pokberu(input)
         end
       end
-      show_pokberu(BYE)
     end
 
     private

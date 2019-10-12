@@ -9,9 +9,6 @@ class DecoratorTest < Minitest::Test
 | ｱｲｼﾃﾙ            |
 --------------------
     TEXT
-
     assert_equal expected, decorator.decorate(input)
   end
 end
-
-

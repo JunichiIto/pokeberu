@@ -15,8 +15,8 @@ module Pokeberu
 
     def to_chars(input)
       input.scan(/../).map { |row_col|
-        row, col = row_col.chars.map(&:to_i)
-        TABLE[row - 1][col - 1]
+        row, col = row_col.chars.map(&:to_i).map(&:pred)
+        TABLE[row][col]
       }.join.katakana.zen_to_han
     end
   end

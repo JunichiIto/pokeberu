@@ -7,4 +7,3 @@ class ConverterTest < Minitest::Test
     assert_equal 'ｱｲｼﾃﾙ', converter.to_chars(input)
   end
 end
-
