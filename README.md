@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/JunichiIto/pokeberu.svg?branch=master)](https://travis-ci.org/JunichiIto/pokeberu)
 # Pokeberu
 
 Sandbox app which converts numbers to chars according to [Japanese pager rule](https://ja.wikipedia.org/wiki/2%E3%82%BF%E3%83%83%E3%83%81%E5%85%A5%E5%8A%9B).
