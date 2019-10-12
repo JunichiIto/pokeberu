@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-```
+```ruby
 require 'pokeberu'
 
 converter = Pokeberu::Converter.new
