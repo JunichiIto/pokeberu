@@ -13,12 +13,16 @@ class RunnerTest < Minitest::Test
       "------------------\n",
       "\n",
       'メッセージを入力してください (exitで終了): ',
-      "Bye!\n",
+      "------------------\n",
+      "|BYE!            |\n",
+      "------------------\n",
+      "\n",
     ].join
 
-    Pokeberu::Runner.stub :gets, -> { inputs.shift } do
+    runner = Pokeberu::Runner.new
+    runner.stub :gets, -> { inputs.shift } do
       assert_output(expected) do
-        Pokeberu::Runner.run
+        runner.run
       end
     end
   end
