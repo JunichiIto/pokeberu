@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pokeberu (0.1.0)
+    pokeberu (0.1.1)
       mojinizer
 
 GEM
