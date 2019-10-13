@@ -3,11 +3,11 @@ module Pokeberu
     LENGTH = 16
 
     def decorate(text)
-      lines = []
-      lines << hr
-      lines << "| #{text.ljust(LENGTH)} |"
-      lines << hr
-      lines.join("\n")
+      <<-TEXT
+#{hr}
+| #{text.ljust(LENGTH)} |
+#{hr}
+      TEXT
     end
 
     private
