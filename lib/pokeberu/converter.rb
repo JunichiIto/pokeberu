@@ -14,21 +14,17 @@ module Pokeberu
     ]
 
     def to_chars(input)
+      to_c = -> ((row, col)) { TABLE[row][col] }
+
       input
         .each_char
         .map(&:to_i)
         .map(&:pred)
         .each_slice(2)
-        .map(&method(:to_c))
+        .map(&to_c)
         .join
         .katakana
         .zen_to_han
-    end
-
-    private
-
-    def to_c((row, col))
-      TABLE[row][col]
     end
   end
 end
