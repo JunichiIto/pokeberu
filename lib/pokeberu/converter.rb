@@ -32,40 +32,43 @@ module Pokeberu
 
     def help
       tr = []
-      col_count = TABLE[0].size
-      tr << draw_full_border(col_count)
       TABLE.each.with_index(1) do |row, i|
-        i = 0 if i > 9
+        tr << draw_full_border
         tr << draw_char_cols(row)
         tr << draw_num_cols(i)
-        tr << draw_full_border(col_count)
       end
-      tr.map(&method(:draw_raw)).join("\n")
+      tr << draw_full_border
+      tr.map(&method(:format_row)).join("\n")
     end
 
     private
 
     def draw_char_cols(row)
-      row.map{|s| s.center(HELP_COL_WIDTH - 1) }.join(V_BORDER).katakana
+      row.map(&method(:format_char)).join(V_BORDER)
+    end
+
+    def format_char(c)
+      c.katakana.center(HELP_COL_WIDTH - 1)
     end
 
     def draw_num_cols(i)
-      from = "#{i}0".to_i
-      to = "#{i}9".to_i
-      nums = (from..to).to_a
-      nums = [*nums[1..-1], nums[0]].map(&method(:format_num))
-      nums.join(V_BORDER)
+      i = 0 if i > 9
+      from = i * 10
+      to = from + 9
+      nums = (from..to).map(&method(:format_num))
+      nums.rotate(1).join(V_BORDER)
     end
 
     def format_num(n)
       n.to_s.rjust(2, '0').center(HELP_COL_WIDTH)
     end
 
-    def draw_full_border(col_count)
-      H_BORDER * HELP_COL_WIDTH * col_count + H_BORDER * (col_count - 1)
+    def draw_full_border
+      col_count = TABLE[0].size
+      H_BORDER * (HELP_COL_WIDTH * col_count + col_count - 1)
     end
 
-    def draw_raw(text)
+    def format_row(text)
       [V_BORDER, text, V_BORDER].join
     end
   end
