@@ -9,7 +9,7 @@ class ConverterTest < Minitest::Test
 
   def test_help
     converter = Pokeberu::Converter.new
-    expected = <<~TABLE
+    expected = <<~TABLE.chomp
       |-------------------------------------------------|
       | ア | イ | ウ | エ | オ | Ａ | Ｂ | Ｃ | Ｄ | Ｅ |
       | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 10 |
