@@ -26,5 +26,40 @@ module Pokeberu
         .katakana
         .zen_to_han
     end
+
+    def help
+      str = ''
+      col_count = TABLE[0].size
+
+      line = '----' * col_count + '-' * (col_count - 1)
+      str << '|'
+      str << line
+      str << '|'
+      str << "\n"
+      TABLE.each.with_index(1) do |row, ri|
+        ri = 0 if ri > 9
+
+        str << '|'
+        str << row.map{|s| s.center(3) }.join('|').katakana
+        str << '|'
+        str << "\n"
+
+        from = "#{ri}0".to_i
+        to = "#{ri}9".to_i
+        nums = (from..to).to_a
+        nums = [*nums[1..-1], nums[0]].map{|n| n.to_s.rjust(2, '0').center(4) }
+        str << '|'
+        str << nums.join('|')
+        str << '|'
+        str << "\n"
+
+        line = '----' * col_count + '-' * (col_count - 1)
+        str << '|'
+        str << line
+        str << '|'
+        str << "\n"
+      end
+      str
+    end
   end
 end
