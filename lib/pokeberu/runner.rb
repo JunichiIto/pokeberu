@@ -21,6 +21,7 @@ module Pokeberu
           break
         when ?h
           puts @converter.help
+          puts
         else
           show_pokberu(input)
         end
