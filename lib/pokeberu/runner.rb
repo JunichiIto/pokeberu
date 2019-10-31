@@ -13,11 +13,14 @@ module Pokeberu
 
     def run
       loop do
-        print 'メッセージを入力してください (exitで終了): '
+        print 'メッセージを入力してください (h=help, q=quit): '
         input = gets.chomp
-        if input == 'exit'
+        case input
+        when ?q
           show_pokberu(BYE)
           break
+        when ?h
+          puts @converter.help
         else
           show_pokberu(input)
         end
