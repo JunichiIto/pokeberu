@@ -11,7 +11,7 @@ GEM
     moji (1.6)
     mojinizer (0.2.2)
       moji (~> 1.6)
-    rake (10.5.0)
+    rake (13.0.1)
 
 PLATFORMS
   ruby
@@ -20,7 +20,7 @@ DEPENDENCIES
   bundler (~> 1.17)
   minitest (~> 5.0)
   pokeberu!
-  rake (~> 10.0)
+  rake (~> 13.0)
 
 BUNDLED WITH
    1.17.3
