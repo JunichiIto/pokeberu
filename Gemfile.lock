@@ -7,20 +7,20 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.12.2)
+    minitest (5.18.1)
     moji (1.6)
     mojinizer (0.2.2)
       moji (~> 1.6)
-    rake (10.5.0)
+    rake (13.0.6)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
-  bundler (~> 1.17)
-  minitest (~> 5.0)
+  bundler
+  minitest
   pokeberu!
-  rake (~> 10.0)
+  rake
 
 BUNDLED WITH
-   1.17.3
+   2.4.17

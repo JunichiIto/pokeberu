@@ -5,6 +5,12 @@ class ConverterTest < Minitest::Test
     converter = Pokeberu::Converter.new
     input = '1112324493'
     assert_equal 'ｱｲｼﾃﾙ', converter.to_chars(input)
+
+    input = '281037373088583048371968'
+    assert_equal 'HELLO WORLD!', converter.to_chars(input)
+
+    input = '0112033573921497009798'
+    assert_equal 'ﾜｲﾝｿﾑﾘｴ2023', converter.to_chars(input)
   end
 
   def test_help
